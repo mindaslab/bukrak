@@ -1,0 +1,3 @@
+== Bukrak
+
+A free software to collaboratively write books. Released under GPL V3 licence or above.
