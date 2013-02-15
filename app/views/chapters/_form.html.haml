@@ -13,7 +13,10 @@
     = f.label :content
     = f.text_area :content
   .field
-    = f.label :book
-    = f.text_field :book
+    = f.label :book_id
+    = f.text_field :book_id
+  .field
+    = f.label :order
+    = f.number_field :order
   .actions
     = f.submit 'Save'
