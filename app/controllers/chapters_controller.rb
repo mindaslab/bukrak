@@ -25,7 +25,7 @@ class ChaptersController < ApplicationController
   # GET /chapters/new.json
   def new
     @chapter = Chapter.new
-
+    @book = Book.find(params[:book_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @chapter }

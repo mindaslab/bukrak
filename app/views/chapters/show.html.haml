@@ -1,15 +1,9 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @chapter.title
-%p
-  %b Content:
-  = @chapter.content
-%p
-  %b Book:
-  = @chapter.book
-
-= link_to 'Edit', edit_chapter_path(@chapter)
-\|
-= link_to 'Back', chapters_path
+%h1= @chapter.title
+.action
+  = link_to @chapter.book.title, @chapter.book, class: 'btn btn-primary btn-mini'
+  = link_to 'Edit', edit_chapter_path(@chapter), class: 'btn btn-mini btn-warning'
+  = link_to 'Delete', @chapter, class: 'btn btn-danger btn-mini', method: :delete, confirm: "Do you really wanna delete this chapter?"
+  
+.chapter_content= @chapter.content

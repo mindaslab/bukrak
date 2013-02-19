@@ -13,8 +13,7 @@
     = f.label :content
     = f.text_area :content
   .field
-    = f.label :book_id
-    = f.text_field :book_id
+    = hidden_field_tag "chapter[book_id]", @book.id
   .field
     = f.label :order
     = f.number_field :order

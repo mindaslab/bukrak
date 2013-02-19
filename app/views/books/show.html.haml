@@ -1,12 +1,9 @@
 %p#notice= notice
 
+%h1= @book.title
+%p= @book.description
 %p
-  %b Title:
-  = @book.title
-%p
-  %b Description:
-  = @book.description
-
-= link_to 'Edit', edit_book_path(@book)
-\|
-= link_to 'Back', books_path
+  = link_to('Add Chapter', {action: :new, controller: :chapters, book_id: @book.id}, class: 'btn btn-success btn-mini')
+  = link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary btn-mini'
+  = link_to 'Delete', @book, class: 'btn btn-danger btn-mini', confirm: 'Do you want to delete this book?', method: :delete
+%ol= render @book.chapters
